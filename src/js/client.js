@@ -6,7 +6,7 @@ import { Router, Route, browserHistory } from 'react-router';
 import { syncHistoryWithStore, routerReducer } from 'react-router-redux';
 
 import * as reducers from './reducers';
-import {App} from './components';
+import {App, GridComponent} from './components';
 
 const store = createStore(
     combineReducers({
@@ -20,7 +20,7 @@ const history = syncHistoryWithStore(browserHistory, store);
 ReactDOM.render(
     <Provider store={store}>
         <Router history={history}>
-            <Route path="/" component={App} />
+            <Route path="/" component={GridComponent} />
         </Router>
     </Provider>,
     document.getElementById('app')
